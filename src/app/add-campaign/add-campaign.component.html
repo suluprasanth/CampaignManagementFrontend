@@ -1,0 +1,67 @@
+<h1 mat-dialog-title>Add Campaign
+<button class="mat-expand-color float-right" mt-2 [mat-dialog-close]="true" matTooltip="Close">
+ 
+    <mat-icon >close</mat-icon>
+  </button></h1>
+<mat-dialog-content class="text">
+  <form [formGroup]="addCampaignForm" (submit)="submit()">
+      <mat-form-field class="form-field" >
+      <mat-label> Name
+      </mat-label>
+      <input matInput formControlName="email" required>
+     
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="outline">
+        <mat-label>From number</mat-label>
+        <mat-select>
+          <mat-option value="">Moplet</mat-option>
+          <mat-option value="">Sulu</mat-option>
+        </mat-select>
+      
+    </mat-form-field>
+    <!--  <mat-form-field class="form-field">
+      <label id="example-radio-group-label">Pick your favorite season</label>
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        [(ngModel)]="selectedContact">
+        <mat-radio-button class="example-radio-button" *ngFor="let contact of contacts" [value]="contact">
+          {{contact}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <div>Your favorite season is: {{selectedContact}}</div>
+      
+  
+    </mat-form-field> -->
+   
+    <button mat-raised-button type="submit" class="setcolor float-right">Add</button>
+  </form>
+</mat-dialog-content>
+<!-- <mat-dialog-actions>
+  <button mat-raised-button type="submit" class="setcolor">Add</button>
+</mat-dialog-actions> -->
+<!-- <mat-dialog-container>
+  <mat-dialog-content>
+<div >
+    <div >
+      <form [formGroup]="addCampaignForm" (submit)="submit()">
+        <mat-form-field class="form-field" >
+          <mat-label> Name
+          </mat-label>
+          <input matInput formControlName="email" required>
+         
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label>From number</mat-label>
+            <mat-select>
+              <mat-option value="">Moplet</mat-option>
+              <mat-option value="">Sulu</mat-option>
+            </mat-select>
+          
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Log In</button>
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>
+</mat-dialog-container> -->

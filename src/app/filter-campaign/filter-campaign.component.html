@@ -1,0 +1,69 @@
+<div class="container-fluid mt-2">
+  <div class="row">
+    <div class="col-sm-12">
+      <mat-card-actions>
+        <button type="button" mat-icon-button color="primary" class="mat-expand-color float-right" matSuffix
+            (click)="toggleFilter()" style="margin-top: 10px;">
+            <mat-icon style="font-weight: bold;">expand_more</mat-icon>
+        </button>
+        <form role="form" (ngSubmit)="paginateRequest()">
+           <button type="submit"  mat-mini-fab class="setcolor float-right ml-3 mt-2">
+            <mat-icon>search</mat-icon>
+          </button>
+          <mat-form-field class="float-right">
+            <input matInput placeholder="Search" name="searchString" [(ngModel)]="searchString" />
+          </mat-form-field>
+        </form>
+        <form role="form" [formGroup]="filterForm" (ngSubmit)="paginateRequest()">
+          <div class="filters" [ngClass]="{ hidden: !filter }">
+              <mat-form-field>
+                <mat-label>From number</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let team of teams" [value]="team.name">{{team.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Scheduled from</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let team of teams" [value]="team.name">{{team.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Scheduled to</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let team of teams" [value]="team.name">{{team.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Contacts</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let team of teams" [value]="team.name">{{team.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Contents</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let team of teams" [value]="team.name">{{team.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Status</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let team of teams" [value]="team.name">{{team.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <button type="button" (click)="clearSearch()"  mat-button class="mat-expand-color float-right close">
+                <mat-icon>close</mat-icon>
+                Clear
+              </button>
+          </div>
+        </form>
+        <button type="button" class="float-right mat-expand-color mt-2" mat-button (click)="refreshData()">
+          <mat-icon>refresh</mat-icon>
+          Refresh
+        </button>
+      </mat-card-actions>   
+    </div>
+  </div>
+</div>

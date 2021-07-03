@@ -1,0 +1,26 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="mat-elevation-z1">
+      <span class="sideNote"><h2>{{ title }}</h2></span>
+      <span class="spacer"></span>
+      <span class="current-time" *ngIf="!(isHandset$ | async)">{{dateMessage}}</span>
+      <button mat-icon-button (click)="logout()">
+        <mat-icon>power_settings_new</mat-icon>
+      </button>
+    </mat-toolbar>
+    <!-- Search form -->
+  
+        <!-- <button class="mat-expand-color float-right" type="button" mat-icon-button matTooltip="Act">
+          <span class="mat-button-wrapper">
+            <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">expand_more</mat-icon>
+          </span>
+        </button> -->
+        <app-filter-campaign></app-filter-campaign>
+        <app-list-campaign></app-list-campaign>
+        <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>
+      
+  </mat-sidenav-content>
+</mat-sidenav-container>
